@@ -16,15 +16,9 @@ Including another URLconf
 """
 from django.conf.urls import url,include
 from django.contrib import admin
-from blog  import views
-from books import views as books_views
+from . import views
 
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^blog/$', views.index,name='index'),
-    url(r'^blog/article/$', views.article,name='article'),
-    #url(r'^books/', books_views.index),
-    url(r'^books/', include('books.urls')),
-
+      url(r'^$', views.index),
 ]
