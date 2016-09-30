@@ -1,3 +1,4 @@
+#coding:utf8
 from __future__ import unicode_literals
 
 from django.db import models
@@ -25,7 +26,8 @@ class ArticleAdmin(admin.ModelAdmin):
 class User(models.Model):
     username = models.CharField(max_length=64)
     password = models.CharField(max_length=64)
-    email    = models.EmailField()
+    email    = models.EmailField(blank=True, verbose_name='邮箱')
+
 
 class UserAdmin(admin.ModelAdmin):
     list_display = ('username','password','email')
